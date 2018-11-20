@@ -42,10 +42,6 @@ fields:
           wysiwyg: true
           schema:
             format: markdown
-      - type: file
-        name: image
-        label: Tab Image
-        description: The image displayed in the home tab
   - type: text
     name: layout
     label: Layout

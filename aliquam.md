@@ -9,7 +9,6 @@ home_tabs:
     Maecenas id feugiat nunc. Integer gravida augue libero, quis pellentesque
     amet pharetra a. Ut sagittis ipsum nec velit porttitor, sed convallis ligula
     pellentesque. Mauris et dignissim sem lacinia lorem ipsum dolor.
-  image: images/pic05.jpg
 layout: page
 ---
 
