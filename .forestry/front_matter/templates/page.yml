@@ -34,9 +34,6 @@ fields:
         name: weight
         label: Tab Weight
         description: The index of the tab in the home tabs section
-        default: 1
-        config:
-          required: true
       - type: textarea
         name: excerpt
         label: Tab Excerpt
