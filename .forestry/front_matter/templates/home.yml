@@ -17,8 +17,8 @@ fields:
         name: enable_icon
         label: Enable Banner Icon
         description: >-
-          Displays the icon specified in the banner icon field at the top of the
-          banner
+          Displays the icon, specified in the banner icon field, at the top of
+          the banner
         default: false
       - type: text
         name: icon
