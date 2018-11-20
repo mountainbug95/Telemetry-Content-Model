@@ -48,7 +48,7 @@ collections:
                     widget: string
                     required: false
                     label: URL
-              - name: sociL_icons
+              - name: social_icons
                 widget: list
                 required: false
                 label: Social Icons
@@ -113,7 +113,7 @@ collections:
                 label: Enable Banner Icon
                 default: false
                 hint: >-
-                  Displays the icon specified in the banner icon field at the
+                  Displays the icon, specified in the banner icon field, at the
                   top of the banner
               - name: icon
                 widget: string
@@ -299,10 +299,48 @@ collections:
                     required: false
                     label: Testimonials
                     hint: A list of testimonials to be displayed in the section
-                    field:
-                      label: String
-                      name: string
-                      widget: string
+                    fields:
+                      - name: quote
+                        widget: string
+                        required: true
+                        label: Quote
+                      - name: name
+                        widget: string
+                        required: true
+                        label: Name
+                        hint: >-
+                          The name of the individual who provided the quote
+                          (displayed below the quote)
+                      - name: title
+                        widget: string
+                        required: false
+                        label: Title
+                        hint: >-
+                          The title of the individual who provided the quote
+                          (displayed below the name)
+                      - name: bg_img
+                        widget: object
+                        required: false
+                        label: Background Image
+                        hint: >-
+                          The image displayed in the background of the quote
+                          container
+                        fields:
+                          - name: path
+                            widget: image
+                            required: false
+                            label: Image
+                          - name: data_position
+                            widget: select
+                            required: false
+                            label: Image Data Position
+                            hint: >-
+                              The position of the background image in the quote
+                              container
+                            options:
+                              - left
+                              - right
+                              - center
                   - name: identifier
                     widget: string
                     required: true
@@ -368,10 +406,17 @@ collections:
                     required: false
                     label: Ratings
                     hint: A list of ratings displayed beside the section content
-                    field:
-                      label: String
-                      name: string
-                      widget: string
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Rating Title
+                      - name: number
+                        widget: number
+                        required: false
+                        label: Rating Value
+                        hint: The value of the rating (as a percent)
+                        valueType: int
                   - name: identifier
                     widget: string
                     required: true
@@ -426,9 +471,8 @@ collections:
             hint: Displays the page tab in the home tabs section
           - name: weight
             widget: number
-            required: true
+            required: false
             label: Tab Weight
-            default: 1
             hint: The index of the tab in the home tabs section
             valueType: int
           - name: excerpt
@@ -436,11 +480,6 @@ collections:
             required: false
             label: Tab Excerpt
             hint: The excerpt displayed in the home tab
-          - name: image
-            widget: image
-            required: false
-            label: Tab Image
-            hint: The image displayed in the home tab
       - name: layout
         widget: hidden
         required: true
