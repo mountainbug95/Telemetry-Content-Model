@@ -23,7 +23,7 @@ fields:
         config:
           required: true
       - type: text
-        name: Name
+        name: name
         label: Name
         description: >-
           The name of the individual who provided the quote (displayed below the
