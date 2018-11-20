@@ -36,10 +36,22 @@ fields:
         name: include_action
         label: Action
         template: action
-  - type: list
+  - type: field_group_list
     name: rating_data
     label: Ratings
     description: A list of ratings displayed beside the section content
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Rating Title
+        config:
+          required: true
+      - type: number
+        name: number
+        label: Rating Value
+        description: The value of the rating (as a percent)
   - type: text
     name: identifier
     label: Identifier
