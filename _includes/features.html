@@ -1,0 +1,23 @@
+<!-- One -->
+<section id="{{ include.section.section_id }}" class="wrapper">
+    <div class="inner">
+        <div class="split style1 centered reversed">
+            {% if include.section.image %}
+                <section>
+                    <span class="image fit {{ include.section.image.orientation }}"><img src="{{ include.section.image.url | relative_url }}" alt="" /></span>
+                </section>
+            {% endif %}
+            <section>
+                <h2>{{ include.section.title }}</h2>
+                <div class="features">
+                    {% for feature in include.section.features_list %}
+                        <article class="icon {{ feature.icon }}">
+                            <h3>{{ feature.title }}</h3>
+                            {{ feature.text | markdownify }}
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

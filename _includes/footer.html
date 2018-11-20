@@ -1,0 +1,13 @@
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        {% if site.contact.enabled %}
+            {% include contact.html %}
+        {% endif %}
+        {% if site.footer.copyright %}
+            <div class="copyright">
+                <p>{{ site.footer.copyright }}</p>
+            </div>
+        {% endif %}
+    </div>
+</footer>

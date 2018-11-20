@@ -1,0 +1,61 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: field_group
+    name: banner
+    label: Page Banner
+    description: The banner displayed at the top of the landing page
+    fields:
+      - type: boolean
+        name: enable_icon
+        label: Enable Banner Icon
+        description: >-
+          Displays the icon specified in the banner icon field at the top of the
+          banner
+        default: false
+      - type: text
+        name: icon
+        label: Banner Icon
+        description: (Font Awesome icon) The icon displayed at the top of the page banner
+      - type: text
+        name: title
+        label: Banner Title
+        description: The text displayed in the page banner
+        config:
+          required: true
+      - type: field_group_list
+        name: actions
+        label: Banner Action Buttons
+        config:
+          labelField: label
+        fields:
+          - type: include
+            name: include_action
+            label: Action
+            template: action
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - features
+      - stats
+      - tabs
+      - testimonials
+      - ratings
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

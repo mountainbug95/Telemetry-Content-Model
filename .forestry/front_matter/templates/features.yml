@@ -1,0 +1,72 @@
+---
+label: Features Section
+hide_body: true
+is_partial: true
+display_field: identifier
+fields:
+  - type: text
+    name: section_id
+    label: Section ID
+    config:
+      required: true
+  - type: text
+    name: title
+    label: Section Title
+    description: The text displayed at the top of the section
+    config:
+      required: true
+  - type: field_group
+    name: image
+    label: Section Image
+    description: The image displayed beside the section content
+    fields:
+      - type: file
+        name: url
+        label: Image
+      - type: select
+        name: orientation
+        description: The orientation of the image being displayed
+        config:
+          source:
+            type: custom
+          options:
+            - portrait
+            - landscape
+  - type: field_group_list
+    name: features_list
+    label: Features
+    description: A list of features displayed in the section
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Feature Title
+        description: The first line of text displayed in the feature
+        config:
+          required: true
+      - type: textarea
+        name: text
+        label: Feature Text
+        description: The text displayed below the feature title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: text
+        name: icon
+        label: Feature Icon
+        description: (Font Awesome icon) The icon displayed beside the feature content
+  - type: text
+    name: identifier
+    label: Identifier
+    description: (Not used by the site) Identifies the section in the CMS
+    default: features
+    config:
+      required: true
+  - type: text
+    name: component
+    hidden: true
+    default: features.html
+    config:
+      required: true

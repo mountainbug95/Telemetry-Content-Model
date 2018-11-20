@@ -1,0 +1,22 @@
+---
+label: Section
+hide_body: true
+is_partial: true
+display_field: identifier
+fields:
+  - type: text
+    name: section_id
+    label: Section ID
+    config:
+      required: true
+  - type: text
+    name: identifier
+    label: Identifier
+    description: (Not used by the site) Identifies the section in the CMS
+    config:
+      required: true
+  - type: text
+    name: component
+    hidden: true
+    config:
+      required: true

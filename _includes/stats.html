@@ -1,0 +1,13 @@
+<!-- Two -->
+<section id="{{ include.section.section_id }}" class="wrapper style1 special">
+    <div class="inner">
+        <div class="stats">
+            {% for stat in include.section.stats_list %}
+                <article>
+                    <h3><span>{{ stat.number }}</span> {{ stat.title }}</h3>
+                    {{ stat.text | markdownify }}
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

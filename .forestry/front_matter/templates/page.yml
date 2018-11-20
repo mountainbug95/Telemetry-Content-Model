@@ -1,0 +1,63 @@
+---
+label: Page
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    description: The text displayed at the top of the page
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Page Subtitle
+    description: The text displayed below the page title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: file
+    name: content_img
+    label: Content Image
+    description: The image displayed above the page content
+  - type: field_group
+    name: home_tabs
+    label: Home Tab
+    description: The tab to be displayed for the page in the home tabs section
+    fields:
+      - type: boolean
+        name: enabled
+        label: Enabled
+        description: Displays the page tab in the home tabs section
+        default: false
+      - type: number
+        name: weight
+        label: Tab Weight
+        description: The index of the tab in the home tabs section
+        default: 1
+        config:
+          required: true
+      - type: textarea
+        name: excerpt
+        label: Tab Excerpt
+        description: The excerpt displayed in the home tab
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: file
+        name: image
+        label: Tab Image
+        description: The image displayed in the home tab
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - aliquam.md
+  - consequat.md
+  - feugiat.md
+  - generic.md

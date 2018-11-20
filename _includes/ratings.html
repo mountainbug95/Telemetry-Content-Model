@@ -1,0 +1,31 @@
+<!-- Five -->
+<section id="{{ include.section.section_id }}" class="wrapper">
+    <div class="inner">
+        <div class="split">
+            <section>
+                <h2>{{ include.section.title }}</h2>
+                {% if include.section.image %}
+                    <span class="image fit"><img src="{{ include.section.image | relative_url }}" alt="" /></span>
+                {% endif %}
+                {{ include.section.text | markdownify }}
+                {% if include.section.actions %}
+                    <ul class="actions">
+                        {% for action in include.section.actions %}
+                        <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | link | relative_url }}{% endif %}" class="button{% if action.is_primary %} primary{% endif %}{% if action.is_scrolly %} scrolly{% endif %}">{{ action.label }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </section>
+            <section>
+                <div class="ratings">
+                    {% for rating in include.section.rating_data %}
+                        <article>
+                            <h3>{{ rating.title }}</h3>
+                            <div class="progress" data-progress="{{ rating.number }}">{{ rating.number }}%</div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

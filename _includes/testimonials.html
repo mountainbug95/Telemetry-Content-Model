@@ -1,0 +1,15 @@
+<!-- Four -->
+<section id="{{ include.section.section_id }}" class="quotes">
+    {% for testimonial in include.section.testimonials %}
+        <article class="icon fa-quote-left">
+            {% if testimonial.bg_img %}
+                <span class="image"><img src="{{ testimonial.bg_img.path | relative_url }}" alt="" data-position="{{ testimonial.bg_img.data_position }}" /></span>
+            {% endif %}
+            <h2>"{{ testimonial.quote }}"</h2>
+            <div class="author">
+                <span class="name">{{ testimonial.name }}</span>
+                <span class="title">{{ testimonial.title }}</span>
+            </div>
+        </article>
+    {% endfor %}
+</section>

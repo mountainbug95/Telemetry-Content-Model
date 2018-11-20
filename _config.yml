@@ -1,0 +1,52 @@
+title: Telemetry
+baseurl: /
+contact:
+  enabled: true
+  contact_list:
+    - text: |-
+        1234 Fictional Street #5432
+        Nashville, TN 00000-0000
+      icon: fa-home
+      url: '#'
+    - text: (000) 000-0000
+      icon: fa-phone
+      url: '#'
+    - text: info@untitled.tld
+      icon: fa-envelope-o
+      url: '#'
+  social_icons:
+    - text: Facebook
+      icon: fa-facebook
+      url: '#'
+    - text: Twitter
+      icon: fa-twitter
+      url: '#'
+    - text: Instagram
+      icon: fa-instagram
+      url: '#'
+    - text: GitHub
+      icon: fa-github
+      url: '#'
+    - text: LinkedIn
+      icon: fa-linkedin
+      url: '#'
+footer:
+  copyright: '&copy; Untitled. All rights reserved.'
+palette: cyan
+palettes:
+  cyan:
+    sass:
+      accent1: '#5ac3d6'
+  green:
+    sass:
+      accent1: '#6eb792'
+  orange:
+    sass:
+      accent1: '#ff887b'
+sass:
+  indentWidth: 4
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+permalink: '/posts/:slug:output_ext'

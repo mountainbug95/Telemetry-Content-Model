@@ -1,0 +1,107 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: field_group
+    name: contact
+    label: Contact Configuration
+    fields:
+      - type: boolean
+        name: enabled
+        label: Enabled
+        description: Displays the contact section in the site footer
+        default: false
+      - type: field_group_list
+        name: contact_list
+        label: Contact Methods
+        description: A list of contact methods to be displayed in the contact section
+        config:
+          labelField: text
+        fields:
+          - type: textarea
+            name: text
+            label: Method Description
+            description: The text displayed beside the method icon
+            config:
+              required: true
+          - type: text
+            name: icon
+            label: Method Icon
+            description: Font Awesome icon
+          - type: text
+            name: url
+            label: URL
+      - type: field_group_list
+        name: sociL_icons
+        label: Social Icons
+        description: A list of social icons displayed below the contact methods
+        config:
+          labelField: text
+        fields:
+          - type: text
+            name: text
+            label: Icon Title
+            config:
+              required: true
+          - type: text
+            name: icon
+            label: Icon
+            description: Font Awesome icon
+            config:
+              required: true
+          - type: text
+            name: url
+            label: URL
+  - type: field_group
+    name: footer
+    label: Footer Configuration
+    fields:
+      - type: text
+        name: copyright
+        label: Copyright Text
+        description: The copyright text displayed at the bottom of the site footer
+  - type: select
+    name: palette
+    label: Color Palette
+    description: The color palette used for the site
+    default: cyan
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - cyan
+        - green
+        - orange
+  - type: field_group
+    name: palettes
+    hidden: true
+    fields:
+      - type: field_group
+        name: cyan
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: green
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: orange
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette

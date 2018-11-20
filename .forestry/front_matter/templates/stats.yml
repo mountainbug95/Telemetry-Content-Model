@@ -1,0 +1,52 @@
+---
+label: Statistics Section
+hide_body: true
+is_partial: true
+display_field: identifier
+fields:
+  - type: text
+    name: section_id
+    label: Section ID
+    default: stats
+    config:
+      required: true
+  - type: field_group_list
+    name: stats_list
+    label: Statistics
+    description: A list of stats displayed in the section
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Statistic Title
+        description: The text displayed below the statistic value
+        config:
+          required: true
+      - type: text
+        name: number
+        label: Statistic Value
+        description: The value of the statistic (displayed above the statistic title)
+        config:
+          required: true
+      - type: textarea
+        name: text
+        label: Statistic Text
+        description: The text displayed below the statistic title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+  - type: text
+    name: identifier
+    label: Identifier
+    description: (Not used by the site) Identifies the section in the CMS
+    default: stats
+    config:
+      required: true
+  - type: text
+    name: component
+    hidden: true
+    default: stats.html
+    config:
+      required: true

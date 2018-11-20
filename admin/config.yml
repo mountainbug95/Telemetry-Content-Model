@@ -1,0 +1,473 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: uploads
+public_folder: /uploads
+collections:
+  - name: config
+    label: Config
+    files:
+      - name: config
+        label: Config
+        file: _config.yml
+        fields:
+          - name: title
+            label: Title
+            widget: text
+            required: true
+          - name: contact
+            widget: object
+            required: false
+            label: Contact Configuration
+            fields:
+              - name: enabled
+                widget: boolean
+                required: false
+                label: Enabled
+                default: false
+                hint: Displays the contact section in the site footer
+              - name: contact_list
+                widget: list
+                required: false
+                label: Contact Methods
+                hint: >-
+                  A list of contact methods to be displayed in the contact
+                  section
+                fields:
+                  - name: text
+                    widget: text
+                    required: true
+                    label: Method Description
+                    hint: The text displayed beside the method icon
+                  - name: icon
+                    widget: string
+                    required: false
+                    label: Method Icon
+                    hint: Font Awesome icon
+                  - name: url
+                    widget: string
+                    required: false
+                    label: URL
+              - name: sociL_icons
+                widget: list
+                required: false
+                label: Social Icons
+                hint: A list of social icons displayed below the contact methods
+                fields:
+                  - name: text
+                    widget: string
+                    required: true
+                    label: Icon Title
+                  - name: icon
+                    widget: string
+                    required: true
+                    label: Icon
+                    hint: Font Awesome icon
+                  - name: url
+                    widget: string
+                    required: false
+                    label: URL
+          - name: footer
+            widget: object
+            required: false
+            label: Footer Configuration
+            fields:
+              - name: copyright
+                widget: string
+                required: false
+                label: Copyright Text
+                hint: The copyright text displayed at the bottom of the site footer
+          - name: palette
+            widget: select
+            required: true
+            label: Color Palette
+            default: cyan
+            hint: The color palette used for the site
+            options:
+              - cyan
+              - green
+              - orange
+          - name: palettes
+            widget: hidden
+            required: false
+  - name: home
+    label: Home
+    files:
+      - name: home
+        label: Home
+        file: index.md
+        fields:
+          - name: title
+            widget: string
+            required: true
+            label: Page Title
+          - name: banner
+            widget: object
+            required: false
+            label: Page Banner
+            hint: The banner displayed at the top of the landing page
+            fields:
+              - name: enable_icon
+                widget: boolean
+                required: false
+                label: Enable Banner Icon
+                default: false
+                hint: >-
+                  Displays the icon specified in the banner icon field at the
+                  top of the banner
+              - name: icon
+                widget: string
+                required: false
+                label: Banner Icon
+                hint: >-
+                  (Font Awesome icon) The icon displayed at the top of the page
+                  banner
+              - name: title
+                widget: string
+                required: true
+                label: Banner Title
+                hint: The text displayed in the page banner
+              - name: actions
+                widget: list
+                required: false
+                label: Banner Action Buttons
+                fields:
+                  - name: label
+                    widget: string
+                    required: true
+                    label: Button Label
+                    hint: The text displayed inside the action button
+                  - name: url
+                    widget: string
+                    required: false
+                    label: URL
+                  - name: is_scrolly
+                    widget: boolean
+                    required: false
+                    label: Is Scrolly
+                    default: false
+                    hint: >-
+                      Gives the button a scroll animation (if URL is a section
+                      ID)
+                  - name: is_primary
+                    widget: boolean
+                    required: false
+                    label: Is Primary
+                    default: false
+                    hint: Gives the button a primary color scheme
+          - name: sections
+            widget: list
+            required: false
+            label: Sections
+            hint: Home Sections
+            types:
+              - name: features
+                widget: object
+                label: Features Section
+                fields:
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                  - name: title
+                    widget: string
+                    required: true
+                    label: Section Title
+                    hint: The text displayed at the top of the section
+                  - name: image
+                    widget: object
+                    required: false
+                    label: Section Image
+                    hint: The image displayed beside the section content
+                    fields:
+                      - name: url
+                        widget: image
+                        required: false
+                        label: Image
+                      - name: orientation
+                        widget: select
+                        required: false
+                        hint: The orientation of the image being displayed
+                        options:
+                          - portrait
+                          - landscape
+                  - name: features_list
+                    widget: list
+                    required: false
+                    label: Features
+                    hint: A list of features displayed in the section
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Feature Title
+                        hint: The first line of text displayed in the feature
+                      - name: text
+                        widget: markdown
+                        required: false
+                        label: Feature Text
+                        hint: The text displayed below the feature title
+                      - name: icon
+                        widget: string
+                        required: false
+                        label: Feature Icon
+                        hint: >-
+                          (Font Awesome icon) The icon displayed beside the
+                          feature content
+                  - name: identifier
+                    widget: string
+                    required: true
+                    label: Identifier
+                    default: features
+                    hint: (Not used by the site) Identifies the section in the CMS
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: features.html
+              - name: stats
+                widget: object
+                label: Statistics Section
+                fields:
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                    default: stats
+                  - name: stats_list
+                    widget: list
+                    required: false
+                    label: Statistics
+                    hint: A list of stats displayed in the section
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Statistic Title
+                        hint: The text displayed below the statistic value
+                      - name: number
+                        widget: string
+                        required: true
+                        label: Statistic Value
+                        hint: >-
+                          The value of the statistic (displayed above the
+                          statistic title)
+                      - name: text
+                        widget: markdown
+                        required: false
+                        label: Statistic Text
+                        hint: The text displayed below the statistic title
+                  - name: identifier
+                    widget: string
+                    required: true
+                    label: Identifier
+                    default: stats
+                    hint: (Not used by the site) Identifies the section in the CMS
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: stats.html
+              - name: tabs
+                widget: object
+                label: Tabs Section
+                fields:
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                    default: tabs
+                  - name: identifier
+                    widget: string
+                    required: true
+                    label: Identifier
+                    default: tabs
+                    hint: (Not used by the site) Identifies the section in the CMS
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: tabs.html
+              - name: testimonials
+                widget: object
+                label: Testimonials Section
+                fields:
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                    default: testimonials
+                  - name: testimonials
+                    widget: list
+                    required: false
+                    label: Testimonials
+                    hint: A list of testimonials to be displayed in the section
+                    field:
+                      label: String
+                      name: string
+                      widget: string
+                  - name: identifier
+                    widget: string
+                    required: true
+                    label: Identifier
+                    default: testimonials
+                    hint: (Not used by the site) Identifies the section in the CMS
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: testimonials.html
+              - name: ratings
+                widget: object
+                label: Ratings Section
+                fields:
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                  - name: title
+                    widget: string
+                    required: true
+                    hint: The title displayed at the top of the section
+                  - name: text
+                    widget: markdown
+                    required: false
+                    label: Section Text
+                    hint: The text displayed in the section content
+                  - name: image
+                    widget: image
+                    required: false
+                    label: Content Image
+                    hint: The image displayed above the section text
+                  - name: actions
+                    widget: list
+                    required: false
+                    label: Section Action Buttons
+                    fields:
+                      - name: label
+                        widget: string
+                        required: true
+                        label: Button Label
+                        hint: The text displayed inside the action button
+                      - name: url
+                        widget: string
+                        required: false
+                        label: URL
+                      - name: is_scrolly
+                        widget: boolean
+                        required: false
+                        label: Is Scrolly
+                        default: false
+                        hint: >-
+                          Gives the button a scroll animation (if URL is a
+                          section ID)
+                      - name: is_primary
+                        widget: boolean
+                        required: false
+                        label: Is Primary
+                        default: false
+                        hint: Gives the button a primary color scheme
+                  - name: rating_data
+                    widget: list
+                    required: false
+                    label: Ratings
+                    hint: A list of ratings displayed beside the section content
+                    field:
+                      label: String
+                      name: string
+                      widget: string
+                  - name: identifier
+                    widget: string
+                    required: true
+                    label: Identifier
+                    default: ratings
+                    hint: (Not used by the site) Identifies the section in the CMS
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: ratings.html
+          - name: layout
+            widget: hidden
+            required: true
+            label: Layout
+            default: home
+  - name: page
+    label: Pages
+    folder: /
+    filter:
+      field: layout
+      value: page
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - name: title
+        widget: string
+        required: true
+        label: Page Title
+        hint: The text displayed at the top of the page
+      - name: subtitle
+        widget: markdown
+        required: false
+        label: Page Subtitle
+        hint: The text displayed below the page title
+      - name: content_img
+        widget: image
+        required: false
+        label: Content Image
+        hint: The image displayed above the page content
+      - name: home_tabs
+        widget: object
+        required: false
+        label: Home Tab
+        hint: The tab to be displayed for the page in the home tabs section
+        fields:
+          - name: enabled
+            widget: boolean
+            required: false
+            label: Enabled
+            default: false
+            hint: Displays the page tab in the home tabs section
+          - name: weight
+            widget: number
+            required: true
+            label: Tab Weight
+            default: 1
+            hint: The index of the tab in the home tabs section
+            valueType: int
+          - name: excerpt
+            widget: markdown
+            required: false
+            label: Tab Excerpt
+            hint: The excerpt displayed in the home tab
+          - name: image
+            widget: image
+            required: false
+            label: Tab Image
+            hint: The image displayed in the home tab
+      - name: layout
+        widget: hidden
+        required: true
+        label: Layout
+        default: page
+      - name: body
+        label: Content
+        widget: markdown
+  - name: elements
+    label: Elements
+    files:
+      - name: elements
+        label: Elements
+        file: elements.md
+        fields:
+          - name: title
+            widget: string
+            required: true
+            label: Page Title
+            hint: The first line of text displayed at the top of the page
+          - name: subtitle
+            widget: markdown
+            required: false
+            label: Page Subtitle
+            hint: The text displayed below the page title
+          - name: layout
+            widget: hidden
+            required: true
+            label: Layout
+            default: elements

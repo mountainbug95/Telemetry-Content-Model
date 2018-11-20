@@ -1,0 +1,29 @@
+---
+label: Testimonials Section
+hide_body: true
+is_partial: true
+display_field: identifier
+fields:
+  - type: text
+    name: section_id
+    label: Section ID
+    default: testimonials
+    config:
+      required: true
+  - type: list
+    name: testimonials
+    label: Testimonials
+    description: A list of testimonials to be displayed in the section
+  - type: text
+    name: identifier
+    label: Identifier
+    description: (Not used by the site) Identifies the section in the CMS
+    default: testimonials
+    config:
+      required: true
+  - type: text
+    name: component
+    hidden: true
+    default: testimonials.html
+    config:
+      required: true

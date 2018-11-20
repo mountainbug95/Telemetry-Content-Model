@@ -1,0 +1,34 @@
+---
+main:
+  - identifier: dropdown
+    title: Dropdown
+    url: '#'
+    weight: 2
+dropdown:
+  - title: Option One
+    weight: 1
+    url: '#'
+  - title: Option Two
+    url: '#'
+    weight: 2
+  - title: Option Three
+    url: '#'
+    weight: 3
+  - identifier: submenu
+    title: Submenu
+    url: '#'
+    weight: 4
+submenu:
+  - title: Option One
+    url: '#'
+    weight: 1
+  - title: Option Two
+    url: '#'
+    weight: 2
+  - title: Option Three
+    url: '#'
+    weight: 3
+  - title: Option Four
+    url: '#'
+    weight: 4
+---
