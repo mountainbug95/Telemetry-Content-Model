@@ -30,7 +30,7 @@ sections:
         icon: fa-envelope-o
     identifier: features
     component: features.html
-    type: features
+    template: features
   - section_id: stats
     stats_list:
       - title: Sed magna
@@ -47,11 +47,11 @@ sections:
         text: Lorem ipsum dolor nulla feugiat adipiscing.
     identifier: stats
     component: stats.html
-    type: stats
+    template: stats
   - section_id: tabs
     identifier: tabs
     component: tabs.html
-    type: tabs
+    template: tabs
   - section_id: testimonials
     testimonials:
       - quote: Sed ultrices consequat dolor nulla fringilla dignissim
@@ -68,7 +68,7 @@ sections:
           data_position: left
     identifier: testimonials
     component: testimonials.html
-    type: testimonials
+    template: testimonials
   - title: Feugiat lorem ipsum dolor velit amet dolor dignissim pharetra
     text: >-
       Maecenas id feugiat nunc. Integer gravida augue libero, quis pellentesque
@@ -94,7 +94,7 @@ sections:
         number: 55
     identifier: ratings
     component: ratings.html
-    type: ratings
+    template: ratings
 menus:
   main:
     title: Home
