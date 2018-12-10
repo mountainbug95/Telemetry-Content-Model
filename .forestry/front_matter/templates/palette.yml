@@ -4,6 +4,8 @@ is_partial: true
 fields:
   - type: field_group
     name: sass
+    label: SASS
     fields:
       - type: text
         name: accent1
+        label: Accent1
