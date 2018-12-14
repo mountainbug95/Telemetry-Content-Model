@@ -28,10 +28,10 @@ sections:
       - title: Euismod morbi
         text: Lorem ipsum dolor sit amet nulla etiam feugiat sed adipiscing.
         icon: fa-envelope-o
-    identifier: features
     component: features.html
     template: features
-  - section_id: stats
+  - title: Stats Section
+    section_id: stats
     stats_list:
       - title: Sed magna
         number: 128
@@ -45,14 +45,14 @@ sections:
       - title: Sit euismod
         number: 768
         text: Lorem ipsum dolor nulla feugiat adipiscing.
-    identifier: stats
     component: stats.html
     template: stats
-  - section_id: tabs
-    identifier: tabs
+  - title: Tabs Section
+    section_id: tabs
     component: tabs.html
     template: tabs
-  - section_id: testimonials
+  - title: Testimonials Section
+    section_id: testimonials
     testimonials:
       - quote: Sed ultrices consequat dolor nulla fringilla dignissim
         name: Jane Doe
@@ -66,7 +66,6 @@ sections:
         bg_img:
           path: images/pic04.jpg
           data_position: left
-    identifier: testimonials
     component: testimonials.html
     template: testimonials
   - title: Feugiat lorem ipsum dolor velit amet dolor dignissim pharetra
@@ -92,7 +91,6 @@ sections:
         number: 45
       - title: Nec lacinia
         number: 55
-    identifier: ratings
     component: ratings.html
     template: ratings
 menus:

@@ -2,7 +2,7 @@
 label: Ratings Section
 hide_body: true
 is_partial: true
-display_field: identifier
+display_field: title
 fields:
   - type: text
     name: section_id
@@ -12,7 +12,10 @@ fields:
   - type: text
     name: title
     label: Section Title
-    description: The title displayed at the top of the section
+    description: >-
+      The text displayed at the top of the section (Also used by the CMS, Even
+      if no title is displayed in the section)
+    default: Ratings Section
     config:
       required: true
   - type: textarea
@@ -53,13 +56,6 @@ fields:
         name: number
         label: Rating Value
         description: The value of the rating (as a percent)
-  - type: text
-    name: identifier
-    label: Identifier
-    description: (Not used by the site) Identifies the section in the CMS
-    default: ratings
-    config:
-      required: true
   - type: text
     name: component
     label: Section Component
